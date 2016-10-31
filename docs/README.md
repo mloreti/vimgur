@@ -4,8 +4,8 @@
 
 [Trello link][trello]
 
-[heroku]: http://www.herokuapp.com
-[trello]: https://trello.com/
+[heroku]: http://www.vimgur.herokuapp.com
+[trello]: https://trello.com/b/NaH5WPpj
 
 ## Minimum Viable Product
 
@@ -17,10 +17,10 @@ sufficient CSS styling:
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
 - [ ] Videos
-- [ ] Upvotes/Downvotes
-- [ ] List of weeks best videos
 - [ ] Link uploading
-- [ ] Video autoplay
+- [ ] Video autoplay & next button
+- [ ] List of weeks best videos
+- [ ] Comments
 - [ ] Production README [sample](docs/production_readme.md)
 
 ## Design Docs
@@ -38,29 +38,29 @@ sufficient CSS styling:
 
 ## Implementation Timeline
 
-### Phase 1:
+### Phase 1: Backend setup and Front End User Authentication (2 days)
 
-**Objective:**
+**Objective:** Have a functioning sign in/sign up with front-end authentication
 
-### Phase 2:
+### Phase 2: Videos model, API, and components setup (2 days)
 
-**Objective:**
+**Objective:** Home page completed with ability to add video links
 
-### Phase 3: N
+### Phase 3: Video playback (2 days)
 
-**Objective:**
+**Objective:** Ability to click a video and play using vimeo/youtube api/embed. Autoplay and next working.
 
-### Phase 4:
+### Phase 4: Upvoting videos (1 day)
 
-**Objective:**
+**Objective:** Ability to upvote/downvote videos and see most upvoted for this week.
 
-### Phase 5:
+### Phase 5: Add profile pages (1 day, W2 Thursday)
 
-**objective:** Do something
+**Objective:** See uploaded videos and liked videos
 
-### Phase 6: -
+### Phase 6: - Add ability to comment (1 day, W2 Friday)
 
-**objective:** Add
+**Objective:** Add/delete comments
 
 ### Bonus Features (TBD)
-- [ ] Search notes by content
+- [ ] Search videos by title
