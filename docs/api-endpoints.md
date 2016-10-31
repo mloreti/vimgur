@@ -27,3 +27,12 @@
 - `POST /api/videos`
 - `GET /api/videos/:id`
 - `DELETE /api/videos/:id`
+
+### Comments
+- `GET /api/video/:id/comments`
+- `POST /api/video/:id/comments`
+- `DELETE /api/video/:id/comments/:id`
+
+### Voting
+- `POST /api/video/:id`
+- `DELETE /api/video/:id`
