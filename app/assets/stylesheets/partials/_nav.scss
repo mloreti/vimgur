@@ -1,0 +1,42 @@
+.header-link h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.header-group, .login-signup {
+  margin-top: 5px;
+}
+
+.primary_nav_wrap ul
+{
+	list-style:none;
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0
+}
+
+.primary_nav_wrap ul li
+{
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0
+}
+
+
+.primary_nav_wrap ul ul
+{
+	display:none;
+	position:absolute;
+	top:100%;
+	left:-50px;
+	background:#fff;
+	padding:10px;
+}
+
+.primary_nav_wrap ul li:hover > ul
+{
+	display:block
+}

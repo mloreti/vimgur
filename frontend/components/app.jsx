@@ -4,8 +4,10 @@ import GreetingContainer from './greeting/greeting_container';
 
 const App = ({ children }) => (
   <div>
-    <header>
-      <Link to="/" className="header-link"><h1>Vimgur</h1></Link>
+    <header className="container clearfix">
+      <div className="float-left">
+        <Link to="/" className="header-link"><h1>Vimgur</h1></Link>
+      </div>
       <GreetingContainer />
     </header>
     {children}
