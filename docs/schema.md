@@ -15,7 +15,6 @@ column name | data type | details
 id          | integer   | not null, primary key
 title       | string    | not null
 link_url    | string    | not null
-upvotes     | integer   | not null
 downvotes   | integer   | not null
 author_id   | integer   | not null, foreign key (references users), indexed
 
@@ -33,3 +32,4 @@ column name | data type | details
 id          | integer   | not null, primary key
 voter_id    | integer   | not null, foreign key (references users), indexed
 video_id    | integer   | not null, foreign key (references videos), indexed
+upvote      | boolean   | not null, default: false

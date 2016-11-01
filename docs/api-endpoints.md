@@ -34,5 +34,5 @@
 - `DELETE /api/video/:id/comments/:id`
 
 ### Voting
-- `POST /api/video/:id`
-- `DELETE /api/video/:id`
+- `POST /api/video/:id/votes`
+- `DELETE /api/video/:id/votes`
