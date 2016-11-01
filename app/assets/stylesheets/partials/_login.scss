@@ -5,4 +5,16 @@
       color: #aaa;
     }
   }
+  input {
+    font-size: 14px;
+  }
+}
+
+.login-form-container {
+  margin-top: 30px;
+}
+
+.errors {
+  list-style: none;
+  color: tomato;
 }

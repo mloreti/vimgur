@@ -13,8 +13,7 @@
       title: "Sample State",
       link_url: "youtube.com/a1hfe22alfj2",
       author_id: 1,
-      upvotes: 0,
-      downvotes: 0,
+      likes: 0,
       comments: {
         1: {
           author_id: 1

@@ -1,3 +1,8 @@
 @import "partials/reset";
 @import "partials/nav";
 @import "partials/login";
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
