@@ -14,7 +14,7 @@ const personalGreeting = (currentUser, logout) => (
     <nav className="primary_nav_wrap">
       <ul>
         <li className="header-name">
-          <a href="#">Hi, {currentUser.username}!</a>
+          <a href="#">{currentUser.username} <i className="fa fa-caret-down" aria-hidden="true"></i></a>
           <ul>
             <li><button className="header-button" onClick={logout}>Log Out</button></li>
           </ul>
