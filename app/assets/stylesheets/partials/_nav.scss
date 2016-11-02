@@ -18,7 +18,8 @@ header.header {
 	position:relative;
 	float:left;
 	margin:0;
-	padding:0
+	padding:0;
+  z-index: 1;
 }
 
 .primary_nav_wrap ul li
@@ -38,6 +39,7 @@ header.header {
 	left:-50px;
 	background:#fff;
 	padding:10px;
+  background: none;
 }
 
 .primary_nav_wrap ul li:hover > ul
