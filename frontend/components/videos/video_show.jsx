@@ -42,8 +42,10 @@ class VideoShow extends React.Component {
     return(
       <div className="video-container">
         <div className="container">
-          <div className="video"
-            dangerouslySetInnerHTML={{__html: video.embed_url}}>
+          <div className="video">
+            <i className="fa fa-angle-left" aria-hidden="true"></i>
+            <div dangerouslySetInnerHTML={{__html: video.embed_url}}></div>
+            <i className="fa fa-angle-right" aria-hidden="true"></i>
           </div>
           <div className="video-info">
             <h2>{video.title}</h2>

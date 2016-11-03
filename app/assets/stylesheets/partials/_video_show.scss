@@ -5,9 +5,15 @@
     align-items: center;
     flex-wrap: wrap;
     .video {
+      i {
+        font-size: 60px;
+        margin: 0 40px;
+        cursor: pointer;
+      }
       width: 100%;
       display: flex;
       justify-content: center;
+      align-items: center;
       padding: 50px;
       iframe {
         width: 900px;
