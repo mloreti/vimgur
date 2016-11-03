@@ -5,8 +5,14 @@
 @import "partials/nav";
 @import "partials/login";
 @import "partials/videos";
+@import "partials/video_show";
+@import "partials/link";
 
 body, html {
   margin: 0;
   padding: 0;
+}
+
+:focus {
+    outline: none;
 }

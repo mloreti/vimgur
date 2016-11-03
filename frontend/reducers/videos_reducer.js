@@ -1,4 +1,4 @@
-import { RECEIVE_VIDEOS } from '../actions/video_actions';
+import { RECEIVE_VIDEOS, RECEIVE_VIDEO } from '../actions/video_actions';
 import merge from 'lodash/merge';
 
 const VideosReducer = (state = {}, action) => {
@@ -6,6 +6,8 @@ const VideosReducer = (state = {}, action) => {
     case RECEIVE_VIDEOS:
       let newState = merge({}, state, action.videos)
       return newState;
+    case RECEIVE_VIDEO:
+      return merge({}, state, {[action.video.id]: action.video})
     default:
       return state;
   }

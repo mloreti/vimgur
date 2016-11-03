@@ -46,3 +46,20 @@ header.header {
 {
 	display:block
 }
+
+header {
+  .nav-left {
+    h1 {
+      display: inline;
+    }
+    ul > li {
+      display: inline;
+    }
+    ul {
+      margin-bottom: 0;
+    }
+    button {
+      margin: -5px 0px 0px 30px;
+    }
+  }
+}
