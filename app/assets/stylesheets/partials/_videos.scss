@@ -21,10 +21,17 @@
   justify-content: space-between;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: flex-end;
   .video-square {
     width: 23.5%;
     margin-top: 10px;
     margin-bottom: 5px;
+    @media (max-width: 900px) {
+      width: 48%;
+    }
+    &:hover {
+      opacity: .75;
+    }
     h5 {
       font-size: 14px;
       font-weight: 700;

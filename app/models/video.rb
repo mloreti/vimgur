@@ -2,10 +2,10 @@ require 'net/http'
 require 'json'
 
 class Video < ActiveRecord::Base
-  validates :title, :link_url, :user_id, :embed_url, :thumbnail, presence: true
+  validates :title, :link_url, :embed_url, :thumbnail, presence: true
 
   def set_data
-    url = "https://vimeo.com/api/oembed.json?url=#{self.link_url}"
+    url = "https://vimeo.com/api/oembed.json?url=#{self.link_url}&autoplay=true&autoplay=true"
     uri = URI(url)
     response = Net::HTTP.get(uri)
     data = JSON.parse(response)
