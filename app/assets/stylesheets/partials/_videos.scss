@@ -12,3 +12,23 @@
 .videos-list {
   margin-top: 30px;
 }
+
+.video-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  .video-square {
+    width: 23.5%;
+    margin-top: 10px;
+    h3 {
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 5px;
+      letter-spacing: .025em;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}

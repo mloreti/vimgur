@@ -2,17 +2,23 @@ import React from 'react';
 import { Link } from 'react-router';
 
 class Videos extends React.Component {
+
   renderVideos(){
     const videos = this.props.videos;
     return(
-      <ul>
+      <div className="video-grid">
         {Object.keys(videos).map(id => {
           let video = videos[id];
-          return (<li key={id}>
-            <div>{video.title} {video.link_url}</div>
-          </li>)
+          return (
+          <Link key={id} to={`/videos/${id}`} className="video-square">
+            <div>
+              <h3>{video.title}</h3>
+              <img src={video.thumbnail} />
+            </div>
+          </Link>
+        )
         })}
-      </ul>
+      </div>
     )
   }
 

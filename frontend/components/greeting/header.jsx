@@ -3,6 +3,12 @@ import { Link, withRouter } from 'react-router';
 import GreetingContainer from './greeting_container';
 import Modal from 'react-modal';
 
+const customStyles = {
+  overlay : {
+      backgroundColor   : 'rgba(0, 0, 0, 0.75)'
+  }
+};
+
 
 class Header extends React.Component {
   constructor (props) {
@@ -11,13 +17,6 @@ class Header extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  componentWillReceiveProps(newProps) {
-    if (newProps.errors.length === 0){
-      this.state.link_url = "";
-      this.closeModal();
-    }
   }
 
   openModal () {
@@ -41,8 +40,9 @@ class Header extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const link = this.state.link_url;
-    console.log(this.props);
     this.props.createVideo(link);
+    this.state.link_url = "";
+    this.closeModal();
   }
 
   form(){
@@ -72,9 +72,12 @@ class Header extends React.Component {
         <Modal
           isOpen={this.state.open}
           onRequestClose={this.closeModal}
+          style={customStyles}
           className="link-modal"
           >
-          <i onClick={this.closeModal} className="fa fa-times link-close float-right" aria-hidden="true"></i>
+          <i onClick={this.closeModal}
+            className="fa fa-times link-close float-right"
+            aria-hidden="true"></i>
           {this.form()}
         </Modal>
         <GreetingContainer />

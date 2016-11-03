@@ -5,6 +5,13 @@ export const fetchVideos = success => {
   })
 }
 
+export const fetchVideo = (id, success) => {
+  $.ajax({
+    url: `api/videos/${id}`,
+    success
+  })
+}
+
 export const createVideo = (link_url, success) => {
   $.ajax({
     url: "api/videos",

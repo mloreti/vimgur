@@ -1,0 +1,14 @@
+.video-container {
+  background: black;
+  .container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    .video {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 50px;
+    }
+  }
+}
