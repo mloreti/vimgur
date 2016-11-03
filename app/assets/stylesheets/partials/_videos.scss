@@ -1,7 +1,10 @@
 .videos-hero {
   height: 400px;
   background: black;
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
+  transition: background 0.5s linear;
   button {
     position: absolute;
     bottom: 40px;
@@ -21,11 +24,18 @@
   .video-square {
     width: 23.5%;
     margin-top: 10px;
-    h3 {
-      font-size: 18px;
-      font-weight: 400;
-      margin-bottom: 5px;
+    margin-bottom: 5px;
+    h5 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 0px;
       letter-spacing: .025em;
+      color: black;
+    }
+    p {
+      color: #606c76;
+      margin: 0;
+      font-size: 13px;
     }
     img {
       width: 100%;

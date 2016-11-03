@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { slider } from '../../util/video_slider';
 
 class Videos extends React.Component {
 
@@ -12,8 +13,9 @@ class Videos extends React.Component {
           return (
           <Link key={id} to={`/videos/${id}`} className="video-square">
             <div>
-              <h3>{video.title}</h3>
               <img src={video.thumbnail} />
+              <h5>{video.title}</h5>
+              <p>{video.likes} likes</p>
             </div>
           </Link>
         )
@@ -32,6 +34,7 @@ class Videos extends React.Component {
           <h3>Videos</h3>
           {this.renderVideos()}
         </div>
+        {slider()}
       </div>
     )
   }
