@@ -1,0 +1,25 @@
+.link-close {
+  cursor: pointer;
+}
+
+.link-modal {
+  position: absolute;
+  background: white;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  width: 400px;
+  form {
+    padding: 50px;
+    margin-bottom: 0px;
+  }
+  input {
+    width: 100%;
+  }
+  input.link-url {
+    font-size: 14px;
+  }
+}
