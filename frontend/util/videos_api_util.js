@@ -20,3 +20,12 @@ export const createVideo = (link_url, success) => {
     success
   })
 }
+
+export const updateVideo = (video, success) => {
+  $.ajax({
+    url: `api/videos/${video.id}`,
+    type: "PATCH",
+    data: {video},
+    success
+  })
+}

@@ -29,8 +29,10 @@ class VideoShow extends React.Component {
     let liked = !this.state.liked;
     if (liked) {
       this.props.video.likes++;
+      this.props.updateVideo(this.props.video);
     } else {
       this.props.video.likes--;
+      this.props.updateVideo(this.props.video);
     }
     this.setState({liked: liked});
   }

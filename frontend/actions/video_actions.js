@@ -3,6 +3,7 @@ export const RECEIVE_VIDEO = "RECEIVE_VIDEO";
 export const FETCH_VIDEOS = "FETCH_VIDEOS";
 export const FETCH_VIDEO = "FETCH_VIDEO";
 export const CREATE_VIDEO = "CREATE_VIDEO";
+export const UPDATE_VIDEO = "UPDATE_VIDEO";
 
 export const fetchVideos = () => ({
   type: FETCH_VIDEOS
@@ -25,5 +26,10 @@ export const receiveVideo = video => ({
 
 export const createVideo = video => ({
   type: CREATE_VIDEO,
+  video
+})
+
+export const updateVideo = video => ({
+  type: UPDATE_VIDEO,
   video
 })

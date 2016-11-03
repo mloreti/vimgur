@@ -1,4 +1,4 @@
-import { RECEIVE_VIDEO } from '../actions/video_actions';
+import { RECEIVE_VIDEO, UPDATE_VIDEO } from '../actions/video_actions';
 import merge from 'lodash/merge';
 
 const VideoReducer = (state = {}, action) => {

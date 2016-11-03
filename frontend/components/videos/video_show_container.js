@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import VideoShow from './video_show';
-import { fetchVideo } from '../../actions/video_actions';
+import { fetchVideo, updateVideo } from '../../actions/video_actions';
 
 
 const mapStateToProps = ({ video }) => ({
@@ -8,7 +8,8 @@ const mapStateToProps = ({ video }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchVideo: id => dispatch(fetchVideo(id))
+  fetchVideo: id => dispatch(fetchVideo(id)),
+  updateVideo: video => dispatch(updateVideo(video))
 });
 
 export default connect(

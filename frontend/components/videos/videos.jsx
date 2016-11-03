@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { slider } from '../../util/video_slider';
 
 class Videos extends React.Component {
 
@@ -34,7 +33,6 @@ class Videos extends React.Component {
           <h3>Videos</h3>
           {this.renderVideos()}
         </div>
-        {slider()}
       </div>
     )
   }

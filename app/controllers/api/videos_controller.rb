@@ -19,10 +19,19 @@ class Api::VideosController < ApplicationController
 		end
 	end
 
+  def update
+    @video = Video.find(params[:id])
+    if @video.update(video_params)
+      render :show
+    else
+      render json: @video.errors.full_messages, status: 422
+    end
+  end
+
 	private
 
 	def video_params
-		params.require(:video).permit(:link_url)
+		params.require(:video).permit(:link_url, :title, :likes, :user_id, :embed_url, :thumbnail)
 	end
 
 end
