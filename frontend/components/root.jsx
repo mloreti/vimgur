@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 import SessionFormContainer from './session_form/session_form_container';
+import HomepageContainer from './homepage/homepage_container';
 import VideosContainer from './videos/videos_container';
 import VideoShowContainer from './videos/video_show_container';
 
@@ -34,9 +35,10 @@ const Root = ({ store }) => {
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={App}>
-          <IndexRoute component={VideosContainer} onEnter={_fetchVideos}/>
+          <IndexRoute component={HomepageContainer} onEnter={_fetchVideos}/>
           <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
+          <Route path="/videos" component={VideosContainer} onEnter={_fetchVideos}/>
           <Route path="/videos/:id" component={VideoShowContainer} />
         </Route>
       </Router>

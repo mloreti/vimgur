@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-class Videos extends React.Component {
+class Homepage extends React.Component {
 
   renderVideos(){
     const videos = this.props.videos;
@@ -26,6 +26,9 @@ class Videos extends React.Component {
   render(){
     return(
       <div className="videos-container">
+        <div className="videos-hero">
+          <button>Start Watching</button>
+        </div>
         <div className="videos-list container">
           <h3>Videos</h3>
           {this.renderVideos()}
@@ -36,4 +39,4 @@ class Videos extends React.Component {
 
 }
 
-export default Videos;
+export default Homepage;

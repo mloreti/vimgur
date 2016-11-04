@@ -1,7 +1,11 @@
 class Api::VideosController < ApplicationController
 
   def index
-    @videos = Video.all
+    if params["sort"] == "new"
+      @videos = Video.all.order(:created_at).limit(20)
+    else
+      @videos = Video.all.order(likes: :desc).limit(20)
+    end
   end
 
   def show
