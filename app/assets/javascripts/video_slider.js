@@ -1,7 +1,9 @@
 $(function() {
     var getImages = function() {
       var images = $(".video-square").find("img");
-      var imgs = Object.keys(images).map(id => (images[id].currentSrc )).splice(0,8);
+      var imgs = Object.keys(images).map(function(id){
+        return (images[id].currentSrc )).splice(0,8)
+      });
       return imgs;
     }
 
