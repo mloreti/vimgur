@@ -3,8 +3,8 @@ import { Link } from 'react-router';
 
 class Homepage extends React.Component {
 
-  renderVideos(){
-    const videos = this.props.videos;
+
+  renderVideos(videos){
     return(
       <div className="video-grid">
         {Object.keys(videos).map(id => {
@@ -24,14 +24,17 @@ class Homepage extends React.Component {
   }
 
   render(){
+    console.log(this.props.new8);
     return(
       <div className="videos-container">
         <div className="videos-hero">
           <button>Start Watching</button>
         </div>
         <div className="videos-list container">
-          <h3>Videos</h3>
-          {this.renderVideos()}
+          <Link to="/videos"><h3>Best Videos</h3></Link>
+          {this.renderVideos(this.props.top8)}
+          <Link to="/videos"><h3>New Videos</h3></Link>
+          {this.renderVideos(this.props.new8)}
         </div>
       </div>
     )
