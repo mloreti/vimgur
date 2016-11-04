@@ -9,7 +9,11 @@ import VideoShowContainer from './videos/video_show_container';
 import BestVideosContainer from './videos/best_videos_container';
 import NewVideosContainer from './videos/new_videos_container';
 
-import {fetchVideos, fetchBestVideos, fetchNewVideos} from '../actions/video_actions'
+import {
+  fetchVideos,
+  fetchVideo,
+  fetchBestVideos,
+  fetchNewVideos } from '../actions/video_actions'
 
 
 import App from './app';
@@ -41,15 +45,25 @@ const Root = ({ store }) => {
     store.dispatch(fetchNewVideos());
   }
 
+  const _fetchBoth = (nextState) => {
+    store.dispatch(fetchVideos());
+    store.dispatch(fetchVideo(nextState.params.id));
+  }
+
+  const handleUpdate = () => {
+      window.scrollTo(0, 0);
+  }
+
+
   return (
     <Provider store={store}>
-      <Router history={hashHistory}>
+      <Router history={hashHistory} onUpdate={handleUpdate}>
         <Route path="/" component={App}>
           <IndexRoute component={HomepageContainer} onEnter={_fetchVideos}/>
           <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/videos" component={VideosContainer} onEnter={_fetchVideos}/>
-          <Route path="/videos/:id" component={VideoShowContainer} onEnter={_fetchVideos} />
+          <Route path="/videos/:id" component={VideoShowContainer} onEnter={_fetchBoth} />
           <Route path="/best" component={BestVideosContainer} onEnter={_fetchBestVideos} />
           <Route path="/new" component={NewVideosContainer} onEnter={_fetchNewVideos} />
         </Route>

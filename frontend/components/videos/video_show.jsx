@@ -11,10 +11,6 @@ class VideoShow extends React.Component {
     this.handleLike = this.handleLike.bind(this);
   }
 
-  componentDidMount() {
-    this.props.fetchVideo(this.props.params.id);
-  }
-
   leftArrow() {
     let thisVid = this.props.vidArray[this.props.videoIndex];
     let firstVid = this.props.vidArray[0];

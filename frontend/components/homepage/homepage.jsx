@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import _ from 'lodash';
 
 class Homepage extends React.Component {
 
@@ -24,10 +25,14 @@ class Homepage extends React.Component {
   }
 
   render(){
+    let vidArray = _.values(this.props.videos);
+    let startVid = (vidArray[0] ? vidArray[0] : {id: 1});
     return(
       <div className="videos-container">
         <div className="videos-hero">
-          <button>Start Watching</button>
+          <Link className="start-button" to={`/videos/${startVid.id}`}>
+            Start Watching
+          </Link>
         </div>
         <div className="videos-list container">
           <Link to="/best"><h3>Best Videos</h3></Link>
