@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router';
 import _ from 'lodash';
+import {videoSlider} from '../../util/video_slider';
 
 class Homepage extends React.Component {
 
+  componentDidMount() {
+    videoSlider();
+  }
 
   renderVideos(videos){
     return(
