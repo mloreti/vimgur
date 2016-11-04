@@ -4,10 +4,18 @@ import {
   CREATE_VIDEO,
   receiveVideo,
   FETCH_VIDEO,
-  UPDATE_VIDEO
+  UPDATE_VIDEO,
+  FETCH_BEST_VIDEOS,
+  FETCH_NEW_VIDEOS
  } from '../actions/video_actions';
 
-import { fetchVideos, createVideo, fetchVideo, updateVideo } from '../util/videos_api_util';
+import {
+  fetchVideos,
+  createVideo,
+  fetchVideo,
+  updateVideo,
+  fetchBestVideos,
+  fetchNewVideos } from '../util/videos_api_util';
 import { hashHistory } from 'react-router';
 
 const VideosMiddleware = ({getState, dispatch}) => next => action => {
@@ -27,6 +35,12 @@ const VideosMiddleware = ({getState, dispatch}) => next => action => {
       return next(action);
     case UPDATE_VIDEO:
       updateVideo(action.video, receiveVideoSuccess);
+      return next(action);
+    case FETCH_NEW_VIDEOS:
+      fetchNewVideos(receiveVideosSuccess);
+      return next(action);
+    case FETCH_BEST_VIDEOS:
+      fetchBestVideos(receiveVideosSuccess);
       return next(action);
     default:
       return next(action);

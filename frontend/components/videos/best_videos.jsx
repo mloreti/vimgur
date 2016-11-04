@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-class Homepage extends React.Component {
-
+class BestVideos extends React.Component {
 
   renderVideos(videos){
     return(
@@ -26,12 +25,9 @@ class Homepage extends React.Component {
   render(){
     return(
       <div className="videos-container">
-        <div className="videos-hero">
-          <button>Start Watching</button>
-        </div>
         <div className="videos-list container">
-          <Link to="/best"><h3>Best Videos</h3></Link>
-          {this.renderVideos(this.props.top8)}
+          <h3>Best Videos / <Link to="/new">New Videos</Link></h3>
+          {this.renderVideos(this.props.videos)}
         </div>
       </div>
     )
@@ -39,4 +35,4 @@ class Homepage extends React.Component {
 
 }
 
-export default Homepage;
+export default BestVideos;

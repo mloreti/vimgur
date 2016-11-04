@@ -6,8 +6,11 @@ import SessionFormContainer from './session_form/session_form_container';
 import HomepageContainer from './homepage/homepage_container';
 import VideosContainer from './videos/videos_container';
 import VideoShowContainer from './videos/video_show_container';
+import BestVideosContainer from './videos/best_videos_container';
+import NewVideosContainer from './videos/new_videos_container';
 
-import {fetchVideos} from '../actions/video_actions'
+import {fetchVideos, fetchBestVideos, fetchNewVideos} from '../actions/video_actions'
+
 
 import App from './app';
 
@@ -31,6 +34,13 @@ const Root = ({ store }) => {
     store.dispatch(fetchVideos());
   }
 
+  const _fetchBestVideos = () => {
+    store.dispatch(fetchBestVideos());
+  }
+  const _fetchNewVideos = () => {
+    store.dispatch(fetchNewVideos());
+  }
+
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
@@ -39,7 +49,9 @@ const Root = ({ store }) => {
           <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/videos" component={VideosContainer} onEnter={_fetchVideos}/>
-          <Route path="/videos/:id" component={VideoShowContainer} />
+          <Route path="/videos/:id" component={VideoShowContainer} onEnter={_fetchVideos} />
+          <Route path="/best" component={BestVideosContainer} onEnter={_fetchBestVideos} />
+          <Route path="/new" component={NewVideosContainer} onEnter={_fetchNewVideos} />
         </Route>
       </Router>
     </Provider>

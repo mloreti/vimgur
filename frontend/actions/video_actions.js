@@ -4,6 +4,8 @@ export const FETCH_VIDEOS = "FETCH_VIDEOS";
 export const FETCH_VIDEO = "FETCH_VIDEO";
 export const CREATE_VIDEO = "CREATE_VIDEO";
 export const UPDATE_VIDEO = "UPDATE_VIDEO";
+export const FETCH_NEW_VIDEOS = "FETCH_NEW_VIDEOS";
+export const FETCH_BEST_VIDEOS = "FETCH_BEST_VIDEOS";
 
 export const fetchVideos = () => ({
   type: FETCH_VIDEOS
@@ -32,4 +34,12 @@ export const createVideo = video => ({
 export const updateVideo = video => ({
   type: UPDATE_VIDEO,
   video
+})
+
+export const fetchNewVideos = () => ({
+  type: FETCH_NEW_VIDEOS
+})
+
+export const fetchBestVideos = () => ({
+  type: FETCH_BEST_VIDEOS
 })

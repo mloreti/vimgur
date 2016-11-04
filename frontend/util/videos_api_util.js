@@ -29,3 +29,17 @@ export const updateVideo = (video, success) => {
     success
   })
 }
+
+export const fetchBestVideos = success => {
+  $.ajax({
+    url: "api/videos?sort=best",
+    success
+  })
+}
+
+export const fetchNewVideos = success => {
+  $.ajax({
+    url: "api/videos?sort=new",
+    success
+  })
+}

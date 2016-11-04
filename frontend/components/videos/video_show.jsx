@@ -1,16 +1,50 @@
 import React from 'react';
 import { Link } from 'react-router';
+import _ from 'lodash';
+
 
 class VideoShow extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {liked: false}
+    this.state = {liked: false};
     this.handleLike = this.handleLike.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchVideo(this.props.params.id);
+  }
+
+  leftArrow() {
+    let thisVid = this.props.vidArray[this.props.videoIndex];
+    let firstVid = this.props.vidArray[0];
+    let nextVid = this.props.vidArray[this.props.videoIndex - 1];
+
+    if (thisVid && thisVid.id != firstVid.id){
+      return(
+        <Link to={`/videos/${nextVid.id}`}>
+          <i className="fa fa-angle-left" aria-hidden="true"></i>
+        </Link>
+      )
+    } else {
+      return "";
+    }
+  }
+
+  rightArrow() {
+    let thisVid = this.props.vidArray[this.props.videoIndex];
+    let lastVid = this.props.vidArray[this.props.vidArray.length - 1];
+    let nextVid = this.props.vidArray[this.props.videoIndex + 1];
+
+    if (thisVid && thisVid.id != lastVid.id){
+      return(
+        <Link to={`/videos/${nextVid.id}`}>
+          <i className="fa fa-angle-right" aria-hidden="true"></i>
+        </Link>
+      )
+    } else {
+      return "";
+    }
   }
 
   like(){
@@ -43,9 +77,9 @@ class VideoShow extends React.Component {
       <div className="video-container">
         <div className="container">
           <div className="video">
-            <i className="fa fa-angle-left" aria-hidden="true"></i>
+            {this.leftArrow()}
             <div dangerouslySetInnerHTML={{__html: video.embed_url}}></div>
-            <i className="fa fa-angle-right" aria-hidden="true"></i>
+            {this.rightArrow()}
           </div>
           <div className="video-info">
             <h2>{video.title}</h2>
