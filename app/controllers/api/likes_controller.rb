@@ -2,16 +2,18 @@ class Api::LikesController < ApplicationController
 
   before_action :require_logged_in
 
+  def show
+    @video = Video.find(like_params[:video_id])
+  end
+
   def create
     like = Like.new(
       user_id: current_user.id,
       video_id: like_params[:video_id]
     )
     if like.save
-      render json: {
-        user_id: current_user.id,
-        video_id: like_params[:video_id]
-        }, status: 200
+      @video = Video.find(like_params[:video_id])
+      render :show
     else
       render json: ["You must be logged in"], status: 422
     end
@@ -23,10 +25,8 @@ class Api::LikesController < ApplicationController
     video_id: like_params[:video_id]
     )
     like.destroy
-    render json: {
-      user_id: current_user.id,
-      video_id: like_params[:video_id]
-      }, status: 200
+    @video = Video.find(like_params[:video_id])
+    render :show
   end
 
   private
