@@ -5,7 +5,7 @@ import merge from 'lodash/merge';
 const VideoReducer = (state = {}, action) => {
   switch(action.type){
     case RECEIVE_VIDEO:
-      return merge({}, state, action.video)
+      return merge({}, action.video)
     case RECEIVE_LIKE_ERRORS:
       const errors = {errors: action.errors};
       return merge({}, state, errors);

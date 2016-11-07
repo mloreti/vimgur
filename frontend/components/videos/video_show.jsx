@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router';
 import _ from 'lodash';
 
-
 class VideoShow extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {liked: this.props.userLiked}
     this.handleLike = this.handleLike.bind(this);
   }
 

@@ -20,4 +20,6 @@ class Video < ActiveRecord::Base
     self
   end
 
+  
+
 end

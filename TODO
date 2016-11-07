@@ -1,13 +1,3 @@
-# LIKES
- - Remove likes column from videos
- - Create likes join table
- - Add association for users/likes
-    user has_many likes
-    user has_many liked_videos (through likes source videos)
-    video has_many likes
-    video has_many user_likes (through likes source user)
-  - Add routes + API util for likes (create/delete)
-
 # COMMENTS
   - Create comments table
 
@@ -18,6 +8,9 @@
   - Give divs background image instead of img src
 
 # VIDEO SLIDER
+
+# VIDEO MODEL
+  - AR queries on model instad of controller
 
 # LIKE BUTTON
   - Fix like persistence issue
