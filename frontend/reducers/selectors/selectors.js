@@ -24,3 +24,13 @@ export const videoIndex = (videos, video) => {
   }
   return idx;
 }
+
+export const userLiked = (users, userId) => {
+  let liked = false;
+  if (users) {
+    for (let i = 0; i < users.length; i++){
+      if (users[i].id == userId) { liked = true }
+    }
+  }
+  return liked
+}

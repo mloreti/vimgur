@@ -14,7 +14,7 @@ class Videos extends React.Component {
             <div>
               <img src={video.thumbnail} />
               <h5>{video.title}</h5>
-              <p>{video.likes} likes</p>
+              <p> likes</p>
             </div>
           </Link>
         )

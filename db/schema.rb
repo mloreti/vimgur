@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161101222614) do
+ActiveRecord::Schema.define(version: 20161105034421) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "likes", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "video_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_likes_on_user_id", using: :btree
+    t.index ["video_id"], name: "index_likes_on_video_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
@@ -25,14 +34,13 @@ ActiveRecord::Schema.define(version: 20161101222614) do
   end
 
   create_table "videos", force: :cascade do |t|
-    t.string   "title",                  null: false
-    t.string   "link_url",               null: false
-    t.integer  "likes",      default: 0
+    t.string   "title",      null: false
+    t.string   "link_url",   null: false
     t.integer  "user_id"
-    t.string   "thumbnail",              null: false
-    t.string   "embed_url",              null: false
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "thumbnail",  null: false
+    t.string   "embed_url",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_videos_on_user_id", using: :btree
   end
 

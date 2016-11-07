@@ -4,7 +4,10 @@ class Api::VideosController < ApplicationController
     if params["sort"] == "new"
       @videos = Video.all.order(created_at: :desc).limit(20)
     else
-      @videos = Video.all.order(likes: :desc).limit(20)
+      @videos = Video
+      .joins('LEFT JOIN likes ON likes.video_id = videos.id')
+      .order('likes')
+      .limit(20)
     end
   end
 
@@ -35,7 +38,7 @@ class Api::VideosController < ApplicationController
 	private
 
 	def video_params
-		params.require(:video).permit(:link_url, :title, :likes, :user_id, :embed_url, :thumbnail)
+		params.require(:video).permit(:link_url, :title, :user_id, :embed_url, :thumbnail)
 	end
 
 end

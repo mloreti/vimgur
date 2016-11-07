@@ -7,7 +7,6 @@ class VideoShow extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {liked: false};
     this.handleLike = this.handleLike.bind(this);
   }
 
@@ -44,27 +43,19 @@ class VideoShow extends React.Component {
   }
 
   like(){
-    if (this.state.liked === true){
-      return(
-        <i className="fa fa-heart" aria-hidden="true" onClick={this.handleLike}></i>
-      )
+    if (this.props.userLiked){
+      return <i className="fa fa-heart" aria-hidden="true" onClick={this.handleLike}></i>
     } else {
-      return(
-        <i className="fa fa-heart-o" aria-hidden="true" onClick={this.handleLike}></i>
-      )
+      return <i className="fa fa-heart-o" aria-hidden="true" onClick={this.handleLike}></i>
     }
   }
 
   handleLike(e) {
-    let liked = !this.state.liked;
-    if (liked) {
-      this.props.video.likes++;
-      this.props.updateVideo(this.props.video);
+    if (this.props.userLiked) {
+      this.props.removeLike({video_id: this.props.video.id});
     } else {
-      this.props.video.likes--;
-      this.props.updateVideo(this.props.video);
+      this.props.addLike({video_id: this.props.video.id});
     }
-    this.setState({liked: liked});
   }
 
   render(){
