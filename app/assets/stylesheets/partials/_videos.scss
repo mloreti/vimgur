@@ -40,12 +40,21 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-end;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  &:after {
+    content: "";
+    flex: auto;
+  }
   .video-square {
     width: 23.5%;
     margin-top: 10px;
     margin-bottom: 5px;
-    @media (max-width: 900px) {
-      width: 48%;
+    width: 25%;
+    padding: 0.5em;
+    box-sizing: border-box;
+    @media (max-width: 800px) {
+      width: 50%;
     }
     &:hover {
       opacity: .75;
@@ -56,6 +65,9 @@
       margin-bottom: 0px;
       letter-spacing: .025em;
       color: black;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     p {
       color: #606c76;
