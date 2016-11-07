@@ -45,3 +45,17 @@
     font-size: 28px;
   }
 }
+.like-modal {
+  padding: 20px;
+  position: absolute;
+  background: white;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  h2 {
+    margin: none;
+  }
+}

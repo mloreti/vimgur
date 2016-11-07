@@ -1,13 +1,34 @@
 import React from 'react';
 import { Link } from 'react-router';
 import _ from 'lodash';
+import Modal from 'react-modal';
+
+const customStyles = {
+  overlay : {
+      backgroundColor   : 'rgba(0, 0, 0, 0.75)'
+  }
+};
 
 class VideoShow extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {liked: this.props.userLiked}
+    this.state = {open: false, link_url: ""};
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
     this.handleLike = this.handleLike.bind(this);
+  }
+
+  openModal () {
+    this.setState({open: true});
+  }
+
+  closeModal () {
+    this.setState({open: false});
+  }
+
+  componentWillMount() {
+    Modal.setAppElement('body');
   }
 
   leftArrow() {
@@ -51,10 +72,14 @@ class VideoShow extends React.Component {
   }
 
   handleLike(e) {
-    if (this.props.userLiked) {
-      this.props.removeLike({video_id: this.props.video.id});
+    if (this.props.session.currentUser) {
+      if (this.props.userLiked) {
+        this.props.removeLike({video_id: this.props.video.id});
+      } else {
+        this.props.addLike({video_id: this.props.video.id});
+      }
     } else {
-      this.props.addLike({video_id: this.props.video.id});
+      this.openModal();
     }
   }
 
@@ -74,6 +99,17 @@ class VideoShow extends React.Component {
               {this.like()}
               <h5> {video.likes}</h5>
             </div>
+            <Modal
+              isOpen={this.state.open}
+              onRequestClose={this.closeModal}
+              style={customStyles}
+              className="like-modal"
+              >
+              <h5>You must be signed in to like <strong>{this.props.video.title}</strong></h5>
+              <Link to="/login">Login </Link>
+               or
+              <Link to="/signup"> Sign Up</Link>
+            </Modal>
           </div>
         </div>
       </div>
