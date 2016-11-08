@@ -39,16 +39,18 @@
   }
   .delete {
     text-transform: uppercase;
-    font-size: .5em;
-    color: white;
+    font-size: 1em;
     letter-spacing: .1em;
     font-weight: bold;
-    padding: 5px;
-    background: tomato;
     display: inline;
     border-radius: 5px;
     margin-left: 10px;
+    margin-top: 2px;
     cursor: pointer;
+    vertical-align: bottom;
+    &:hover {
+      color: tomato;
+    }
   }
 }
 

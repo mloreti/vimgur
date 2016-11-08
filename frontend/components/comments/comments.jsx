@@ -58,7 +58,7 @@ class Comments extends React.Component {
   deleteButton(comment) {
     if (this.props.session.currentUser.username == comment.username) {
       return(
-        <h5 onClick={() => this.handleDelete(comment)} className="delete">Delete</h5>
+        <i className="fa fa-times delete" alt="delete" aria-hidden="true"></i>
       )
     } else {
       return;
