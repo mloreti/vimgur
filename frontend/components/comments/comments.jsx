@@ -91,6 +91,22 @@ class Comments extends React.Component {
     }
   }
 
+  sessionModal() {
+    return(
+      <Modal
+        isOpen={this.state.open}
+        onRequestClose={this.closeModal}
+        style={customStyles}
+        className="like-modal"
+        >
+        <h5>You must be signed in to comment</h5>
+        <Link to="/login">Login </Link>
+         or
+        <Link to="/signup"> Sign Up</Link>
+      </Modal>
+    )
+  }
+
   commentsForm() {
     return(
       <form onSubmit={this.handleSubmit}>
@@ -106,25 +122,40 @@ class Comments extends React.Component {
     )
   }
 
+  newVideos(){
+    let videos = this.props.videos;
+    if (videos){
+      return(
+        Object.keys(videos).slice(0,5).map(id => (
+          <Link key={id} to={`/videos/${videos[id].id}`} className="video-square">
+            <div>
+              <img src={videos[id].thumbnail} />
+            </div>
+          </Link>
+        ))
+      )
+    }
+  }
+
   render(){
     return(
       <div className="comments-container">
-        <div className="comments container">
-          <h3>Comments</h3>
-          {this.renderComments()}
-          {this.commentsForm()}
+        <div className="container">
+          <div className="row">
+            <div className="comments column column-60">
+              <h3>Comments</h3>
+              {this.renderComments()}
+              {this.commentsForm()}
+            </div>
+            <div className="new-videos column column-30 column-offset-10">
+              <Link to="/new"><h3>New Videos</h3></Link>
+              <div className="video-grid">
+                {this.newVideos()}
+              </div>
+            </div>
+            {this.sessionModal()}
+          </div>
         </div>
-        <Modal
-          isOpen={this.state.open}
-          onRequestClose={this.closeModal}
-          style={customStyles}
-          className="like-modal"
-          >
-          <h5>You must be signed in to comment</h5>
-          <Link to="/login">Login </Link>
-           or
-          <Link to="/signup"> Sign Up</Link>
-        </Modal>
       </div>
     )
   }
