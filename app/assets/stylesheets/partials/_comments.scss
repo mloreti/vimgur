@@ -1,0 +1,20 @@
+.comments-container {
+  margin-top: 20px;
+}
+
+.comment {
+  padding: 2px;
+  h5 {
+    font-size: 14px;
+    margin-bottom: 2px;
+    .author {
+      font-weight: bold;
+      letter-spacing: .5px;
+      color: black;
+    }
+  }
+}
+
+input {
+  font-size: 14px;
+}

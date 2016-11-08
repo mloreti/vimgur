@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import _ from 'lodash';
 import Modal from 'react-modal';
+import CommentsContainer from '../comments/comments_container';
 
 const customStyles = {
   overlay : {
@@ -86,32 +87,35 @@ class VideoShow extends React.Component {
   render(){
     const video = this.props.video;
     return(
-      <div className="video-container">
-        <div className="container">
-          <div className="video">
-            {this.leftArrow()}
-            <div dangerouslySetInnerHTML={{__html: video.embed_url}}></div>
-            {this.rightArrow()}
-          </div>
-          <div className="video-info">
-            <h2>{video.title}</h2>
-            <div className="like float-right">
-              {this.like()}
-              <h5> {video.likes}</h5>
+      <div>
+        <div className="video-container">
+          <div className="container">
+            <div className="video">
+              {this.leftArrow()}
+              <div dangerouslySetInnerHTML={{__html: video.embed_url}}></div>
+              {this.rightArrow()}
             </div>
-            <Modal
-              isOpen={this.state.open}
-              onRequestClose={this.closeModal}
-              style={customStyles}
-              className="like-modal"
-              >
-              <h5>You must be signed in to like <strong>{this.props.video.title}</strong></h5>
-              <Link to="/login">Login </Link>
-               or
-              <Link to="/signup"> Sign Up</Link>
-            </Modal>
+            <div className="video-info">
+              <h2>{video.title}</h2>
+              <div className="like float-right">
+                {this.like()}
+                <h5> {video.likes}</h5>
+              </div>
+              <Modal
+                isOpen={this.state.open}
+                onRequestClose={this.closeModal}
+                style={customStyles}
+                className="like-modal"
+                >
+                <h5>You must be signed in to like <strong>{this.props.video.title}</strong></h5>
+                <Link to="/login">Login </Link>
+                 or
+                <Link to="/signup"> Sign Up</Link>
+              </Modal>
+            </div>
           </div>
         </div>
+        <CommentsContainer videos={this.props.videos} video={this.props.video}/>
       </div>
     )
   }

@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
 	has_many :liked_videos,
 		through: :likes,
 		source: :video
+		
+	has_many :comments
 
 	def password= password
 		self.password_digest = BCrypt::Password.create(password)

@@ -8,6 +8,7 @@ class Video < ActiveRecord::Base
   has_many :user_likes,
     through: :likes,
     source: :user
+  has_many :comments
 
   def set_data
     url = "https://vimeo.com/api/oembed.json?url=#{self.link_url}&autoplay=true&autoplay=true"
@@ -20,6 +21,6 @@ class Video < ActiveRecord::Base
     self
   end
 
-  
+
 
 end

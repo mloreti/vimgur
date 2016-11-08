@@ -14,7 +14,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 50px;
+      padding: 50px 50px 20px 50px;
       iframe {
         width: 900px;
         height: 450px;
@@ -41,8 +41,10 @@
   width: 100%;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 60px;
   h2 {
     font-size: 28px;
+    margin-bottom: 0;
   }
 }
 .like-modal {
