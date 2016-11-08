@@ -20,14 +20,15 @@ header.header {
 	margin:0;
 	padding:0;
   z-index: 1;
+  cursor: pointer;
 }
 
 .primary_nav_wrap ul li
 {
 	position:relative;
-	float:left;
-	margin:0;
-	padding:0
+	float: right;
+	margin:5px 0px;
+	padding:0;
 }
 
 
@@ -38,13 +39,20 @@ header.header {
 	top:100%;
 	left:-50px;
 	background:#fff;
-	padding:10px;
-  background: none;
+	padding: 10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background: white;
 }
 
 .primary_nav_wrap ul li:hover > ul
 {
-	display:block
+	display:block;
+  li {
+    &:hover {
+      font-weight: bold;
+    }
+  }
 }
 
 header {

@@ -8,6 +8,7 @@ import VideosContainer from './videos/videos_container';
 import VideoShowContainer from './videos/video_show_container';
 import BestVideosContainer from './videos/best_videos_container';
 import NewVideosContainer from './videos/new_videos_container';
+import UsersContainer from './users/users_container';
 
 import {
   fetchVideos,
@@ -54,6 +55,13 @@ const Root = ({ store }) => {
       window.scrollTo(0, 0);
   }
 
+  const _restrictUser = (nextState, replace) => {
+    const currentUser = store.getState().session.currentUser;
+    if (currentUser.username != nextState.params.username) {
+      replace('/login');
+    }
+  }
+
 
   return (
     <Provider store={store}>
@@ -66,6 +74,7 @@ const Root = ({ store }) => {
           <Route path="/videos/:id" component={VideoShowContainer} onEnter={_fetchBoth} />
           <Route path="/best" component={BestVideosContainer} onEnter={_fetchBestVideos} />
           <Route path="/new" component={NewVideosContainer} onEnter={_fetchNewVideos} />
+          <Route path="/users/:username" component={UsersContainer} onEnter={_restrictUser} />
         </Route>
       </Router>
     </Provider>

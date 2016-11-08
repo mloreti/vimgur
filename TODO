@@ -2,16 +2,13 @@
 # VIMEO API
   - Update to new api for better thumbnails
 
-  # VIDEOS INDEX
+# VIDEOS INDEX
   - Give divs background image instead of img src
 
 # VIDEO SLIDER
 
 # VIDEO MODEL
   - AR queries on model instad of controller
-
-# LIKE BUTTON
-  - Fix like persistence issue
 
 # USERS PAGE
   - Create Route
