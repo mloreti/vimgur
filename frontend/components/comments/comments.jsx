@@ -55,13 +55,35 @@ class Comments extends React.Component {
     }
   }
 
+  deleteButton(comment) {
+    if (this.props.session.currentUser.username == comment.username) {
+      return(
+        <h5 onClick={() => this.handleDelete(comment)} className="delete">Delete</h5>
+      )
+    } else {
+      return;
+    }
+  }
+
+  handleDelete(comment) {
+    let oldComment = {};
+    oldComment.id = comment.id;
+    oldComment.video_id = this.props.video.id;
+    this.props.removeComment(oldComment);
+  }
+
   renderComments() {
     const comments = this.props.video.comments;
     if (comments && comments.length > 0){
       return(
         comments.map(comment => (
           <div key={comment.id} className="comment">
-            <h5><span className="author">{comment.username}</span> - <Ago date={comment.date} /></h5>
+            <h5>
+              <span className="author">
+                {comment.username}
+              </span> - <Ago date={comment.date} />
+              </h5>
+              {this.deleteButton(comment)}
             <p>{comment.body}</p>
           </div>
         ))

@@ -15,19 +15,18 @@ class Api::CommentsController < ApplicationController
   end
 
   def destroy
-    comment = Comment.find_by(
-    user_id: current_user.id,
-    video_id: comment_params[:video_id]
-    )
-    comment.destroy
-    @video = Video.find(comment_params[:video_id])
-    render :show
+    comment = Comment.find(params[:id])
+    if comment
+      comment.destroy
+      @video = Video.find(comment_params[:video_id])
+      render :show
+    end
   end
 
   private
 
   def comment_params
-    params.require(:comment).permit(:video_id, :body)
+    params.require(:comment).permit(:id, :video_id, :body)
   end
 
 end

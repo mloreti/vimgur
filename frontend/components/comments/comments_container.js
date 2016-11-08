@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Comments from './comments';
-import { addComment } from '../../actions/comment_actions';
+import { addComment, removeComment } from '../../actions/comment_actions';
 
 const mapStateToProps = ({ videos, video, session }) => {
   return {
@@ -11,7 +11,8 @@ const mapStateToProps = ({ videos, video, session }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  addComment: comment => dispatch(addComment(comment))
+  addComment: comment => dispatch(addComment(comment)),
+  removeComment: comment => dispatch(removeComment(comment))
 });
 
 export default connect(
