@@ -44,7 +44,9 @@ class VideoShow extends React.Component {
         </Link>
       )
     } else {
-      return "";
+      return(
+          <i className="fa fa-angle-left" aria-hidden="true"></i>
+      )
     }
   }
 

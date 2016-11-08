@@ -3,14 +3,15 @@
 }
 
 .comment {
-  padding: 2px;
+  padding: 0 10px;
+  border-left: 5px solid whitesmoke;
+  margin: 5px 0;
   h5 {
     font-size: 14px;
     margin-bottom: 2px;
     .author {
       font-weight: bold;
       letter-spacing: .5px;
-      color: black;
     }
   }
 }

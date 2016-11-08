@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import Ago from 'react-ago-component';
 
 class Comments extends React.Component {
 
@@ -33,12 +34,12 @@ class Comments extends React.Component {
       return(
         comments.map(comment => (
           <div key={comment.id} className="comment">
-            <h5><span className="author">{comment.username}</span> - {comment.date}</h5>
+            <h5><span className="author">{comment.username}</span> - <Ago date={comment.date} /></h5>
             <p>{comment.body}</p>
           </div>
         ))
       )
-    } 
+    }
   }
 
   commentsForm() {

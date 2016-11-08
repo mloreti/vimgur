@@ -4,6 +4,8 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    justify-content: center;
+    height: 100vh;
     .video {
       i {
         font-size: 60px;
@@ -38,10 +40,13 @@
 
 .video-info {
   display: flex;
-  width: 100%;
+  width: 900px;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 60px;
+  border-top: 1px solid #222;
+  margin-top: 20px;
+  padding-top: 20px;
   h2 {
     font-size: 28px;
     margin-bottom: 0;
