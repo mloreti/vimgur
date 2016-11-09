@@ -14,7 +14,8 @@ import {
   fetchVideos,
   fetchVideo,
   fetchBestVideos,
-  fetchNewVideos } from '../actions/video_actions'
+  fetchNewVideos } from '../actions/video_actions';
+import { fetchCurrentUser } from '../actions/user_actions';
 
 
 import App from './app';
@@ -57,8 +58,11 @@ const Root = ({ store }) => {
 
   const _restrictUser = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
-    if (currentUser.username != nextState.params.username) {
+    if (currentUser == null || currentUser.username != nextState.params.username) {
       replace('/login');
+    } else {
+      store.dispatch(fetchCurrentUser(currentUser.id));
+      store.dispatch(fetchVideos());
     }
   }
 

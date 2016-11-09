@@ -6,14 +6,19 @@ class Users extends React.Component {
   renderLikedVideos() {
     return(
       <div className="video-grid">
-        {this.props.user.liked.map(video => (
+        {this.props.user.liked.map(video => {
+          let divStyle = {
+            backgroundImage: 'url(' + video.thumbnail + ')'
+          }
+          return (
           <Link key={video.id} to={`/videos/${video.id}`} className="video-square">
             <div>
-              <img src={video.thumbnail} />
+              <div className="video-thumb" style={divStyle}></div>
               <h5>{video.title}</h5>
             </div>
           </Link>
-        ))}
+        )
+        })}
       </div>
     )
   }

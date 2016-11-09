@@ -15,7 +15,6 @@ class Footer extends React.Component {
             </div>
             <div className="column column-25">
               <ul>
-                <li><Link to="/videos">Videos</Link></li>
                 <li><Link to="/best">Best Videos</Link></li>
                 <li><Link to="/new">New Videos</Link></li>
               </ul>

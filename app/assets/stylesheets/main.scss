@@ -10,28 +10,29 @@
 @import "partials/comments";
 @import "partials/users";
 
-$primary-color: #4FA649;
+$green: #4FA649;
+$grey: #4F5858;
 
 body, html {
   margin: 0;
   padding: 0;
   a {
-    color: $primary-color;
+    color: $grey;
   }
   button {
-    background: $primary-color;
-    border-color: $primary-color;
+    background: $grey;
+    border-color: $grey;
   }
   input[type='submit'] {
-    background: $primary-color;
-    border-color: $primary-color;
+    background: $grey;
+    border-color: $grey;
   }
   input[type='text']:focus {
-    border-color: $primary-color;
+    border-color: $grey;
   }
 }
 
 :focus {
-  border-color: $primary-color;
+  border-color: $grey;
   outline: none;
 }
