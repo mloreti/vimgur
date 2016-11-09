@@ -2,17 +2,5 @@
 # VIMEO API
   - Update to new api for better thumbnails
 
-# VIDEOS INDEX
-  - Give divs background image instead of img src
-
-# VIDEO SLIDER
-
 # VIDEO MODEL
   - AR queries on model instad of controller
-
-# USERS PAGE
-  - Create Route
-  - Fetch User onEnter
-
-# COMMENTS
- - If user logged in, allow delete

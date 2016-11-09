@@ -8,10 +8,13 @@ class NewVideos extends React.Component {
       <div className="video-grid">
         {Object.keys(videos).map(id => {
           let video = videos[id];
+          let divStyle = {
+            backgroundImage: 'url(' + video.thumbnail + ')'
+          }
           return (
           <Link key={id} to={`/videos/${video.id}`} className="video-square">
             <div>
-              <img src={video.thumbnail} />
+              <div className="video-thumb" style={divStyle}></div>
               <h5>{video.title}</h5>
               <p>{video.likes} likes</p>
             </div>

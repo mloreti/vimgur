@@ -13,7 +13,7 @@ const customStyles = {
 class Header extends React.Component {
   constructor (props) {
     super(props);
-    this.state = {open: false, link_url: ""};
+    this.state = {open: false, link_url: "", errors: ""};
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,7 +24,7 @@ class Header extends React.Component {
   }
 
   closeModal () {
-    this.setState({open: false});
+    this.setState({open: false, errors: "", link_url:""});
   }
 
   componentWillMount() {
@@ -39,16 +39,31 @@ class Header extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const link = this.state.link_url;
-    this.props.createVideo(link);
-    this.state.link_url = "";
-    this.closeModal();
+    if (this.state.link_url.match(/vimeo/)) {
+      const link = this.state.link_url;
+      this.props.createVideo(link);
+      this.state.link_url = "";
+      this.closeModal();
+    } else {
+      this.setState({errors: "We currently only accept vimeo urls"})
+    }
+  }
+
+  errors() {
+    if (this.state.errors) {
+      return(
+        <span className="link-error" >{this.state.errors}</span >
+      )
+    } else {
+      return;
+    }
   }
 
   form(){
     return(
       <form onSubmit={this.handleSubmit}>
         <h3>New Video</h3>
+        {this.errors()}
         <input type="text"
           className="link-url"
           placeholder="Link Url"

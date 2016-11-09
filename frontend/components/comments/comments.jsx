@@ -56,7 +56,7 @@ class Comments extends React.Component {
   }
 
   deleteButton(comment) {
-    if (this.props.session.currentUser.username == comment.username) {
+    if (this.props.session.currentUser && this.props.session.currentUser.username == comment.username) {
       return(
         <i className="fa fa-times delete"
           alt="delete"
@@ -152,7 +152,7 @@ class Comments extends React.Component {
               {this.commentsForm()}
             </div>
             <div className="new-videos column column-30 column-offset-10">
-              <Link to="/new"><h3>New Videos</h3></Link>
+              <Link to="/new"><h3>Other Videos</h3></Link>
               <div className="video-grid">
                 {this.newVideos()}
               </div>
