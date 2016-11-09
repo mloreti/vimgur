@@ -14,10 +14,11 @@ class Homepage extends React.Component {
           }
           return (
           <Link key={id} to={`/videos/${video.id}`} className="video-square">
-            <div>
-              <div className="video-thumb" style={divStyle}></div>
+            <div className="video-thumb" style={divStyle}></div>
+            <div className="info-overlay">
+              <p><i className="fa fa-heart" aria-hidden="true"></i>
+ {video.likes}</p>
               <h5>{video.title}</h5>
-              <p>{video.likes} likes</p>
             </div>
           </Link>
         )
@@ -48,6 +49,9 @@ class Homepage extends React.Component {
     let startVid = (vidArray[0] ? vidArray[0] : {id: 1});
     return(
       <div className="videos-container">
+        <div className="tag-line">
+          <h1>Vimgur, watch this weeks best videos</h1>
+        </div>
         <div className="videos-hero">
           <Link className="start-button" to={`/videos/${startVid.id}`}>
             Start Watching
@@ -55,13 +59,10 @@ class Homepage extends React.Component {
           <div className="hero-overlay"></div>
           {this.heroImages()}
         </div>
-        <div className="videos-list container">
-          <Link to="/best">
-            <h3>Best Videos
-              <i className="fa fa-angle-right" aria-hidden="true"></i>
-            </h3>
-          </Link>
-          {this.renderVideos(this.props.top8)}
+        <div className="homepage-videos">
+          <div className="videos-list container">
+            {this.renderVideos(this.props.top8)}
+          </div>
         </div>
       </div>
     )

@@ -77,7 +77,7 @@
     position: absolute;
     bottom: 40px;
     left: 100px;
-    border: .1rem solid;
+    border: 1px solid;
     border-radius: .4rem;
     color: #fff;
     cursor: pointer;
@@ -90,71 +90,5 @@
     padding: 0 3rem;
     text-transform: uppercase;
     z-index: 2;
-  }
-}
-
-.videos-list {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  a {
-    h3 {
-      margin: 30px 0px 10px 0px;
-    }
-  }
-  i.fa.fa-angle-right {
-    font-size: 31px;
-    margin-left: 5px;
-  }
-}
-
-.video-grid {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  margin-left: -0.5rem;
-  margin-right: -0.5rem;
-  &:after {
-    content: "";
-    flex: auto;
-  }
-  .video-square {
-    width: 23.5%;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    width: 25%;
-    padding: 0.5em;
-    box-sizing: border-box;
-    @media (max-width: 800px) {
-      width: 50%;
-    }
-    &:hover {
-      opacity: .75;
-    }
-    h5 {
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 0px;
-      letter-spacing: .025em;
-      color: black;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    p {
-      color: #606c76;
-      margin: 0;
-      font-size: 13px;
-    }
-    img {
-      width: 100%;
-    }
-    .video-thumb {
-      height: 160px;
-      width: 100%;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
   }
 }

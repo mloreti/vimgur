@@ -5,12 +5,15 @@
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
-    height: 100vh;
     .video {
       i {
         font-size: 60px;
         margin: 0 40px;
         cursor: pointer;
+      }
+      .black {
+        color: black;
+        visibility: hidden;
       }
       width: 100%;
       display: flex;

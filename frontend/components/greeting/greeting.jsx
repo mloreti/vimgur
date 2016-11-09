@@ -13,6 +13,8 @@ const personalGreeting = (currentUser, logout) => (
 	<hgroup className="header-group float-right">
     <nav className="primary_nav_wrap">
       <ul>
+        <li><Link to="/best">Best Videos</Link></li>
+        <li><Link to="/new">New Videos</Link></li>
         <li className="header-name">
           {currentUser.username} <i className="fa fa-caret-down" aria-hidden="true"></i>
           <ul>

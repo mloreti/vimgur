@@ -1,0 +1,33 @@
+header {
+  .nav-left {
+    h1 {
+      display: inline;
+    }
+    ul > li {
+      display: inline;
+    }
+    ul {
+      margin-bottom: 0;
+    }
+    button {
+      margin: -5px 0px 0px 30px;
+      background-color: transparent;
+      border: 1px solid white;
+    }
+  }
+}
+.header-wrapper {
+  padding: 10px 0;
+  background-color: black;
+}
+
+.header-link h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  color: #606c76;
+}
+
+.header-group, .login-signup {
+  margin-top: 2px;
+}

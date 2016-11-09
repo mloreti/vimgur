@@ -1,21 +1,13 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-@import "partials/reset";
-@import "partials/nav";
-@import "partials/login";
-@import "partials/videos";
-@import "partials/video_show";
-@import "partials/link";
-@import "partials/comments";
-@import "partials/users";
-
 $green: #4FA649;
 $grey: #4F5858;
 
 body, html {
   margin: 0;
   padding: 0;
+  background: black;
   a {
     color: $grey;
   }
@@ -30,6 +22,9 @@ body, html {
   input[type='text']:focus {
     border-color: $grey;
   }
+}
+main.container {
+  padding: 0;
 }
 
 :focus {

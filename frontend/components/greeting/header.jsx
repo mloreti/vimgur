@@ -77,26 +77,28 @@ class Header extends React.Component {
 
   render() {
     return (
-      <header className="container clearfix header">
-        <div className="float-left nav-left">
-          <ul>
-            <li><Link to="/" className="header-link"><h1>Vimgur</h1></Link></li>
-            <li><button onClick={this.openModal}>New Video</button></li>
-          </ul>
-        </div>
-        <Modal
-          isOpen={this.state.open}
-          onRequestClose={this.closeModal}
-          style={customStyles}
-          className="link-modal"
-          >
-          <i onClick={this.closeModal}
-            className="fa fa-times link-close float-right"
-            aria-hidden="true"></i>
-          {this.form()}
-        </Modal>
-        <GreetingContainer />
-      </header>
+      <div className="header-wrapper">
+        <header className="container clearfix header">
+          <div className="float-left nav-left">
+            <ul>
+              <li><Link to="/" className="header-link"><h1>Vimgur</h1></Link></li>
+              <li><button onClick={this.openModal}>New Video</button></li>
+            </ul>
+          </div>
+          <Modal
+            isOpen={this.state.open}
+            onRequestClose={this.closeModal}
+            style={customStyles}
+            className="link-modal"
+            >
+            <i onClick={this.closeModal}
+              className="fa fa-times link-close float-right"
+              aria-hidden="true"></i>
+            {this.form()}
+          </Modal>
+          <GreetingContainer />
+        </header>
+      </div>
     )
   }
 }
