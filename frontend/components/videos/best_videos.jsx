@@ -29,7 +29,7 @@ class BestVideos extends React.Component {
     return(
       <div className="videos-container">
         <div className="videos-list container">
-          <h3>Best Videos / <Link to="/new">New Videos</Link></h3>
+          <h3><strong>Best Videos</strong> / <Link to="/new">New Videos</Link></h3>
           {this.renderVideos(this.props.videos)}
         </div>
       </div>

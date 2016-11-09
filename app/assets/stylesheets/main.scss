@@ -10,11 +10,28 @@
 @import "partials/comments";
 @import "partials/users";
 
+$primary-color: #4FA649;
+
 body, html {
   margin: 0;
   padding: 0;
+  a {
+    color: $primary-color;
+  }
+  button {
+    background: $primary-color;
+    border-color: $primary-color;
+  }
+  input[type='submit'] {
+    background: $primary-color;
+    border-color: $primary-color;
+  }
+  input[type='text']:focus {
+    border-color: $primary-color;
+  }
 }
 
 :focus {
-    outline: none;
+  border-color: $primary-color;
+  outline: none;
 }

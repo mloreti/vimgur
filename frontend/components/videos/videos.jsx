@@ -27,7 +27,7 @@ class Videos extends React.Component {
     return(
       <div className="videos-container">
         <div className="videos-list container">
-          <h3>Videos</h3>
+          <h3><strong>Videos</strong></h3>
           {this.renderVideos()}
         </div>
       </div>

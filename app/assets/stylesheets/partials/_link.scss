@@ -12,6 +12,7 @@
   transform: translate(-50%, -50%);
   padding: 10px;
   width: 400px;
+  z-index: 3;
   form {
     padding: 50px;
     margin-bottom: 0px;
@@ -30,4 +31,8 @@
 
 .link-error {
   color: red;
+}
+
+.ReactModal__Overlay--after-open {
+  z-index: 3;
 }

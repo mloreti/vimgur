@@ -77,8 +77,7 @@
     position: absolute;
     bottom: 40px;
     left: 100px;
-    background-color: #9b4dca;
-    border: .1rem solid #9b4dca;
+    border: .1rem solid;
     border-radius: .4rem;
     color: #fff;
     cursor: pointer;
@@ -96,6 +95,7 @@
 
 .videos-list {
   margin-top: 30px;
+  margin-bottom: 30px;
   a {
     h3 {
       margin: 30px 0px 10px 0px;
