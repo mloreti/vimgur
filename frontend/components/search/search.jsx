@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+import { Link } from 'react-router';
 import _ from 'lodash';
 
 const customStyles = {
@@ -35,7 +36,7 @@ class Search extends React.Component {
       this.setState({
         [field]: e.currentTarget.value
       })
-      this.props.searchQuery(this.state.search);
+      this.props.searchQuery(e.target.value);
     };
   }
 
@@ -46,7 +47,7 @@ class Search extends React.Component {
           className="search-input"
           placeholder="Search"
           value={this.state.search}
-          onChange={this.update("search")}
+          onInput={this.update("search")}
           autoFocus
           />
       </form>
@@ -60,7 +61,11 @@ class Search extends React.Component {
         {Object.keys(search).map(id => {
           let video = search[id];
           return(
-            <div key={id}>{video.title}</div>
+            <div key={id}>
+              <Link to={`videos/${video.id}`} onClick={this.closeModal}>
+                {video.title}
+              </Link>
+            </div>
           )
         })}
       </div>
