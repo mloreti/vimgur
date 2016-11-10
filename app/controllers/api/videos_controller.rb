@@ -2,11 +2,10 @@ class Api::VideosController < ApplicationController
 
   def index
     if params["sort"] == "new"
-      @videos = Video.all.order(created_at: :desc).limit(20)
+      @videos = Video.order(created_at: :desc).limit(20)
     elsif params["sort"] == "best"
       @videos = Video
-      .joins('LEFT JOIN likes ON likes.video_id = videos.id')
-      .includes(:likes)
+      .eager_load(:likes)
       .order('likes')
       .limit(20)
     elsif params[:search] && !params[:search].empty?
