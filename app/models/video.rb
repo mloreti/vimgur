@@ -21,6 +21,8 @@ class Video < ActiveRecord::Base
     self
   end
 
-
+  def custom_key
+    "#{self.likes.count}-#{self.id}"
+  end
 
 end

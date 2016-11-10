@@ -10,8 +10,8 @@ const VideosReducer = (state = {}, action) => {
       return newState;
     case RECEIVE_VIDEO:
       newState = merge({}, state);
-      delete newState[action.video.id];
-      return merge({}, newState, {[action.video.id]: action.video});
+      delete newState[`${action.video.likes}-${action.video.id}`];
+      return merge({}, newState, {[`${action.video.likes}-${action.video.id}`]: action.video});
     default:
       return state;
   }
