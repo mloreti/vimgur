@@ -48,8 +48,8 @@ const Root = ({ store }) => {
   }
 
   const _fetchBoth = (nextState) => {
-    store.dispatch(fetchVideos());
     store.dispatch(fetchVideo(nextState.params.id));
+    store.dispatch(fetchVideos());
   }
 
   const handleUpdate = () => {

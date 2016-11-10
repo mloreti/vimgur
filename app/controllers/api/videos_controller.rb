@@ -5,7 +5,7 @@ class Api::VideosController < ApplicationController
       @videos = Video.all.order(created_at: :desc).limit(20)
     elsif params[:search] && !params[:search].empty?
       @videos = Video.where([
-          'title LIKE :query',
+          'title ILIKE :query',
           {query: "%#{params[:search]}%"}
         ])
     else

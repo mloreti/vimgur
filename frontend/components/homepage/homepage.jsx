@@ -49,10 +49,10 @@ class Homepage extends React.Component {
     let startVid = (vidArray[0] ? vidArray[0] : {id: 1});
     return(
       <div className="videos-container">
-        <div className="tag-line">
-          <h1>Vimgur, watch this weeks best videos</h1>
-        </div>
         <div className="videos-hero">
+          <div className="tag-line">
+            <h1>Vimgur, watch this week's best videos</h1>
+          </div>
           <Link className="start-button" to={`/videos/${startVid.id}`}>
             Start Watching
           </Link>

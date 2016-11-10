@@ -45,7 +45,6 @@ class Comments extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.props.session);
     if (this.props.session.currentUser){
       let comment = {};
       comment.video_id = this.props.video.id;
@@ -135,7 +134,6 @@ class Comments extends React.Component {
     vidArray = vidArray.splice(0,5);
     let vidKeys = _.keys(videos).splice(0,5);
     vidArray = _.zipObject(vidKeys, vidArray);
-    console.log(vidArray);
     if (videos){
       return(
         <VideoGrid videos={vidArray}/>

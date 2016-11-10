@@ -7,11 +7,15 @@ import {
 import merge from 'lodash/merge';
 
 const VideoReducer = (state = {}, action) => {
+  let newState = {};
+
   switch(action.type){
     case RECEIVE_VIDEO:
-      return merge({}, action.video)
+      return action.video
     case RECEIVE_LIKE_VIDEO:
-      return merge({}, action.video)
+      newState = merge({}, state);
+      delete newState[action.video.id]
+      return merge({}, newState, action.video);
     case RECEIVE_LIKE_ERRORS:
       const errors = {errors: action.errors};
       return merge({}, state, errors);

@@ -32,5 +32,5 @@ export const userLiked = (users, userId) => {
       if (users[i].id == userId) { liked = true }
     }
   }
-  return liked
+  return liked;
 }
