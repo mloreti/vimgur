@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import SearchContainer from '../search/search_container';
 
 const sessionLinks = () => (
   <nav className="login-signup float-right">
@@ -13,6 +14,7 @@ const personalGreeting = (currentUser, logout) => (
 	<hgroup className="header-group float-right">
     <nav className="primary_nav_wrap">
       <ul>
+        <SearchContainer />
         <li><Link to="/best">Best Videos</Link></li>
         <li><Link to="/new">New Videos</Link></li>
         <li className="header-name">

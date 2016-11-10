@@ -11,7 +11,6 @@ import { login, signup, logout } from '../util/session_api_util';
 import { fetchCurrentUser } from '../util/user_api_util';
 
 export default ({getState, dispatch}) => next => action => {
-
   const handleSuccess = user => dispatch(receiveCurrentUser(user));
   const handleError = error => dispatch(receiveErrors(error.responseJSON));
   const handleLogoutSuccess = () => dispatch(receiveLogoutSuccess());

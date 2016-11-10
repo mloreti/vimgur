@@ -1,0 +1,13 @@
+.search-container{
+}
+
+input.search-input {
+  border-width: 0px;
+  font-size: 36px;
+  color: white;
+  margin: 0;
+  padding-left: 0;
+  &:focus {
+    border-width: 0px;
+  }
+}

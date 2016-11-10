@@ -3,6 +3,11 @@ class Api::VideosController < ApplicationController
   def index
     if params["sort"] == "new"
       @videos = Video.all.order(created_at: :desc).limit(20)
+    elsif params[:search] && !params[:search].empty?
+      @videos = Video.where([
+          'title LIKE :query',
+          {query: "%#{params[:search]}%"}
+        ])
     else
       @videos = Video
       .joins('LEFT JOIN likes ON likes.video_id = videos.id')
@@ -38,7 +43,7 @@ class Api::VideosController < ApplicationController
 	private
 
 	def video_params
-		params.require(:video).permit(:link_url, :title, :user_id, :embed_url, :thumbnail)
+		params.require(:video).permit(:link_url, :title, :user_id, :embed_url, :thumbnail, :search)
 	end
 
 end
