@@ -3,13 +3,14 @@
 
 $green: #4FA649;
 $grey: #4F5858;
+$light-grey: lightgrey;
 
 body, html {
   margin: 0;
   padding: 0;
   background: black;
   a {
-    color: $grey;
+    color: $light-grey;
   }
   button {
     background: $grey;

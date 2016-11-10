@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 import Ago from 'react-ago-component';
 import Modal from 'react-modal';
+import VideoGrid from '../videos/video_grid';
+import _ from 'lodash';
 
 const customStyles = {
   overlay : {
@@ -128,15 +130,15 @@ class Comments extends React.Component {
 
   newVideos(){
     let videos = this.props.videos;
+    let vidArray = _.values(videos);
+    vidArray = _.shuffle(vidArray);
+    vidArray = vidArray.splice(0,5);
+    let vidKeys = _.keys(videos).splice(0,5);
+    vidArray = _.zipObject(vidKeys, vidArray);
+    console.log(vidArray);
     if (videos){
       return(
-        Object.keys(videos).slice(0,5).map(id => (
-          <Link key={id} to={`/videos/${videos[id].id}`} className="video-square">
-            <div>
-              <img src={videos[id].thumbnail} />
-            </div>
-          </Link>
-        ))
+        <VideoGrid videos={vidArray}/>
       )
     }
   }
@@ -152,10 +154,8 @@ class Comments extends React.Component {
               {this.commentsForm()}
             </div>
             <div className="new-videos column column-30 column-offset-10">
-              <Link to="/new"><h3>Other Videos</h3></Link>
-              <div className="video-grid">
-                {this.newVideos()}
-              </div>
+              <h3>Other Videos</h3>
+              {this.newVideos()}
             </div>
             {this.sessionModal()}
           </div>

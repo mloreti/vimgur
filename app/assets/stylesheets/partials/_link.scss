@@ -4,7 +4,8 @@
 
 .link-modal {
   position: absolute;
-  background: white;
+  background: #222;
+  color:white;
   top: 50%;
   left: 50%;
   right: auto;
@@ -22,6 +23,7 @@
   }
   input.link-url {
     font-size: 14px;
+    color: white;
   }
 }
 
