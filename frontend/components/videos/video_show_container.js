@@ -10,7 +10,7 @@ const mapStateToProps = ({ video, videos, session }) => ({
   videos: videos,
   videoIndex: videoIndex(videos, video),
   vidArray: _.values(videos),
-  userLiked: userLiked(video.liked, (session.currentUser ? currentUser.id : null)),
+  userLiked: userLiked(video.liked, (session.currentUser ? session.currentUser.id : null)),
   session: session
 });
 
