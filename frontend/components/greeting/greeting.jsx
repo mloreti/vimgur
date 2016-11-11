@@ -3,10 +3,15 @@ import { Link } from 'react-router';
 import SearchContainer from '../search/search_container';
 
 const sessionLinks = () => (
-  <nav className="login-signup float-right">
-    <Link to="/login" activeClassName="current">Login</Link>
-    &nbsp;or&nbsp;
-    <Link to="/signup" activeClassName="current">Sign up!</Link>
+  <nav className="primary_nav_wrap login-signup float-right">
+    <ul>
+      <SearchContainer />
+      <li><Link to="/best">Best Videos</Link></li>
+      <li><Link to="/new">New Videos</Link></li>
+      <li><Link to="/login" activeClassName="current">Login</Link>&nbsp;/&nbsp;
+          <Link to="/signup" activeClassName="current">Sign up</Link>
+      </li>
+    </ul>
   </nav>
 );
 
