@@ -1,6 +1,6 @@
 
-# VIMEO API
-  - Update to new api for better thumbnails
-
 # VIDEO MODEL
   - AR queries on model instad of controller
+
+# AFTER LOGIN
+ - Links dont work
