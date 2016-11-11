@@ -7,7 +7,7 @@
 
 [Vimgur]("https://vimgur.herokuapp.com")
 
-Vimgur is a site inspired by imgur and vimeo. It's a hybrid that is meant to showcase the most interesting videos people come across on vimeo.
+Vimgur is a site inspired by imgur and vimeo. It's a hybrid that is meant to showcase the most interesting videos people come across on vimeo. Vimgur is built with Ruby on Rails on the backend, a PostgreSQL database, and a ReactJS with Redux architecture for the frontend. 
 
 ### Features & Implementation
 
@@ -59,6 +59,6 @@ Besides the top 8 videos on the homepage a user can click to see the top 20 best
 
 #### User Profile & Likes
 
-Likes are handled by a join table the holds the `user_id` and `video_id`. This join table allows the video to show whether the logged in user has liked the current video or not. Also, the user can see `liked_videos` on their profile page. Liking a video is restricted to users only. Clicking on like whilst not logged in will result in a modal asking for you to sign in. 
+Likes are handled by a join table the holds the `user_id` and `video_id`. This join table allows the video to show whether the logged in user has liked the current video or not. Also, the user can see `liked_videos` on their profile page. Liking a video is restricted to users only. Clicking on like whilst not logged in will result in a modal asking for you to sign in.
 
 ![alt text][user_profile]
