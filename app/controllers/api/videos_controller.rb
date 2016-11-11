@@ -4,10 +4,7 @@ class Api::VideosController < ApplicationController
     if params["sort"] == "new"
       @videos = Video.order(created_at: :desc).limit(20)
     elsif params["sort"] == "best"
-      @videos = Video
-      .eager_load(:likes)
-      .order('likes')
-      .limit(20)
+      @videos = Video.all
     elsif params[:search] && !params[:search].empty?
       @videos = Video.where([
           'title ILIKE :query',

@@ -128,17 +128,13 @@ class Comments extends React.Component {
   }
 
   newVideos(){
-    let videos = this.props.videos;
-    let vidArray = _.values(videos);
-    vidArray = _.shuffle(vidArray);
-    vidArray = vidArray.splice(0,5);
-    let vidKeys = _.keys(videos).splice(0,5);
-    vidArray = _.zipObject(vidKeys, vidArray);
-    if (videos){
-      return(
-        <VideoGrid videos={vidArray}/>
-      )
+    let length = Object.keys(this.props.randVideos).length;
+    if (length == 5) {
+      return <VideoGrid videos={this.props.randVideos}/>;
+    } else {
+      return "";
     }
+
   }
 
   render(){
