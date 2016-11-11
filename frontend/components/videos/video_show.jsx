@@ -109,7 +109,7 @@ class VideoShow extends React.Component {
                 style={customStyles}
                 className="like-modal"
                 >
-                <h5>You must be signed in to like <strong>{this.props.video.title}</strong></h5>
+                <h5>You must be signed in to like {this.props.video.title}</h5>
                 <Link to="/login">Login </Link>
                  or
                 <Link to="/signup"> Sign Up</Link>
