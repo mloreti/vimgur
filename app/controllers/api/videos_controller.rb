@@ -5,11 +5,15 @@ class Api::VideosController < ApplicationController
       @videos = Video.order(created_at: :desc).limit(20)
     elsif params["sort"] == "best"
       @videos = Video.all
-    elsif params[:search] && !params[:search].empty?
-      @videos = Video.where([
-          'title ILIKE :query',
-          {query: "%#{params[:search]}%"}
-        ])
+    elsif params[:search]
+      if params[:search] == ""
+        @videos = []
+      else
+        @videos = Video.where([
+            'title ILIKE :query',
+            {query: "%#{params[:search]}%"}
+          ]).limit(24)
+      end
     else
       @videos = Video.all
     end

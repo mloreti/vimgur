@@ -11,3 +11,26 @@ input.search-input {
     border-width: 0px;
   }
 }
+
+.search-results {
+  a {
+
+  }
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  .search-video {
+    width: 15%;
+    margin-right: 1.5%;
+  }
+  h4 {
+    font-size: 16px;
+  }
+  .search-image {
+    height: 70px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}

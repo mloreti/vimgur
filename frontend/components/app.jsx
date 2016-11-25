@@ -4,7 +4,7 @@ import HeaderContainer from './greeting/header_container';
 import Footer from './footer/footer';
 
 const App = ({ children }) => (
-  <div>
+  <div className="vimgur">
     <HeaderContainer />
     {children}
     <Footer />

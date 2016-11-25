@@ -29,6 +29,15 @@ main.container {
   padding: 0;
 }
 
+.vimgur {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  .videos-container {
+    flex: 1;
+  }
+}
+
 :focus {
   border-color: $grey;
   outline: none;

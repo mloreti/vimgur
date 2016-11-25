@@ -2,6 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import { Link } from 'react-router';
 import _ from 'lodash';
+import VideoGrid from '../videos/video_grid';
 
 const customStyles = {
   overlay : {
@@ -25,6 +26,7 @@ class Search extends React.Component {
 
   closeModal () {
     this.setState({open: false, search:""});
+    this.searchResults();
   }
 
   componentWillMount() {
@@ -56,15 +58,22 @@ class Search extends React.Component {
 
   searchResults() {
     let search = this.props.search;
+    if (_.isEmpty(search) || this.state.search == "") {
+      return <h3>No videos found</h3>
+    }
     return(
-      <div>
+      <div className="search-results">
         {Object.keys(search).map(id => {
           let video = search[id];
-          return(
-            <div key={id}>
-              <Link to={`videos/${video.id}`} onClick={this.closeModal}>
-                {video.title}
+          let divStyle = {
+            backgroundImage: 'url(' + video.thumbnail + ')'
+          }
+          return (
+            <div key={id} className="search-video">
+              <Link to={`/videos/${video.id}`} onClick={this.closeModal}>
+                <div className="search-image" style={divStyle}></div>
               </Link>
+              <h4>{ video.title }</h4>
             </div>
           )
         })}
