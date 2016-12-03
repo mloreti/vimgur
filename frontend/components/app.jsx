@@ -6,7 +6,9 @@ import Footer from './footer/footer';
 const App = ({ children }) => (
   <div className="vimgur">
     <HeaderContainer />
-    {children}
+    <div className="content-area">
+      {children}
+    </div>
     <Footer />
   </div>
 );

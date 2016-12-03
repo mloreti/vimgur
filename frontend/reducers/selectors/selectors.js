@@ -17,7 +17,7 @@ export const top20selector = (videos) => {
 export const new8selector = (videos) => {
   let vidArray = Object.keys(videos).map(id => videos[id]);
   return vidArray.sort(function(a, b) {
-    return parseFloat(a.created_at) - parseFloat(b.created_at);
+    return parseFloat(b.created_at) - parseFloat(a.created_at);
   }).splice(0,8);
 }
 
@@ -43,8 +43,9 @@ export const userLiked = (users, userId) => {
 }
 
 export const randVideos = (videos = {}) => {
+  videos = new8selector(videos);
   let vidArray = _.values(videos);
-  vidArray = _.shuffle(vidArray);
+  // vidArray = _.shuffle(vidArray);
   vidArray = vidArray.splice(0,5);
   let vidKeys = _.keys(videos).splice(0,5);
   vidArray = _.zipObject(vidKeys, vidArray);

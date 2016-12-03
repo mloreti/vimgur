@@ -113,18 +113,24 @@ class Comments extends React.Component {
   }
 
   commentsForm() {
-    return(
-      <form onSubmit={this.handleSubmit}>
-        <h5>New Comment</h5>
-        <input
-          type="text"
-          value={this.state.body}
-          onChange={this.update("body")}
-          placeholder="Comment"
-          className="comment-input" />
-        <input type="submit"></input>
-      </form>
-    )
+    if (this.props.session.currentUser){
+      return(
+        <form onSubmit={this.handleSubmit}>
+          <h5>New Comment</h5>
+          <input
+            type="text"
+            value={this.state.body}
+            onChange={this.update("body")}
+            placeholder="Comment"
+            className="comment-input" />
+          <input type="submit"></input>
+        </form>
+      )
+    } else {
+      return(
+        <h5>You must be signed in to comment</h5>
+      )
+    }
   }
 
   newVideos(){

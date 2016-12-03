@@ -28,6 +28,9 @@ main.container {
   max-width: 1300px;
   padding: 0;
 }
+.content-area {
+  flex:1;
+}
 
 .vimgur {
   display: flex;
