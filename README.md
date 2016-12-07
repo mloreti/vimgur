@@ -5,7 +5,7 @@
 
 # Vimgur
 
-[Live]("https://vimgur.herokuapp.com")
+[Live](https://vimgur.herokuapp.com)
 
 Vimgur is a site inspired by imgur and vimeo. It's a hybrid that is meant to showcase the most interesting videos people come across on vimeo. Vimgur is built with Ruby on Rails on the backend, a PostgreSQL database, and a ReactJS with Redux architecture for the frontend.
 
