@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import ReactGA from 'react-ga';
 
 import SessionFormContainer from './session_form/session_form_container';
 import HomepageContainer from './homepage/homepage_container';
@@ -19,6 +20,13 @@ import { fetchCurrentUser } from '../actions/user_actions';
 
 
 import App from './app';
+
+ReactGA.initialize('UA-32260133-3');
+
+function logPageView() {
+  ReactGA.set({ page: window.location.pathname });
+  ReactGA.pageview(window.location.pathname);
+}
 
 const Root = ({ store }) => {
 
@@ -54,6 +62,7 @@ const Root = ({ store }) => {
 
   const handleUpdate = () => {
       window.scrollTo(0, 0);
+      logPageView();
   }
 
   const _restrictUser = (nextState, replace) => {
